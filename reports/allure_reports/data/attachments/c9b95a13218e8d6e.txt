@@ -1,0 +1,7 @@
+Directorio base:  C:\Users\lilia\Desktop\python-selenium
+---------------
+CHROME
+---------------
+Driver inicializado correctamente
+get_json file: C:\Users\lilia\Desktop\python-selenium\src\pages/google.json
+Se cerrara el driver

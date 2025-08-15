@@ -1,0 +1,4 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"Se require visitar el sitio de google: </br>Deseamos la fecha en el input principal</br></br>","4610","test_dummy","tests","Fri Aug 15 17:23:07 CST 2025","passed","Fri Aug 15 17:23:12 CST 2025","DummyTest","test_dummy","",""
+"Se require visitar el sitio de google: </br>Deseamos la fecha en el input principal</br></br>","6408","test_fechas","tests","Fri Aug 15 17:23:13 CST 2025","passed","Fri Aug 15 17:23:19 CST 2025","GoogleFecha","test_fecha","",""
+"Se require visitar el sitio de Facebook: </br>Llenamos los campos requeridos</br></br>","7592","test_news_tructure_json","tests","Fri Aug 15 17:23:20 CST 2025","skipped","Fri Aug 15 17:23:28 CST 2025","StructurJson","test_newstructure","",""
