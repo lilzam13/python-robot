@@ -62,6 +62,9 @@ Crear un entorno virtual: python -m venv venv
 Activa el entorno virtual: venv\Scripts\activate
 Instala Selenium dentro del entorno virtual: pip install selenium
 Comprobar que selenium esta bien instalado: python -c "import selenium; print(selenium.__version__)"
+*** Intalar librerias dentro del entorno virtual ***
+pip install -r requirement.txt
+pip freeze .\requirement.txt
 
 *** Activacion de un virutal env en Power Shell ***
 En Window PowerShell, verificar que este instalado python y pip
@@ -197,7 +200,6 @@ Al correr xml, tal vez es necesario instalar la libreria dentro del enviroment v
 Al correr html, tal vez es necesario instalar el paquete de pytest-html:
   pip install pytest-html
 
-Actualizar: PS C:\Users\lilia\Desktop\python-selenium> pip freeze .\requirement.txt
 ***Problemas con el interprete de vs code(No detecta librerias):***
 1.- Abre la paleta de comandos con Ctrl + Shift + P
 2.- Escribe “Python: Select Interpreter”
@@ -222,13 +224,22 @@ allure open reports/allure_reports --port 5000
 C:\Users\lilia\AppData\Local\Google\Chrome\User Data\Profile 2
 C:\Users\lilia\AppData\Local\Mozilla\Firefox\Profiles
 cmd firefox.exe -profilemanager
-Actualizar librerias: PS C:\Users\lilia\Desktop\python-selenium> pip freeze .\requirement.txt
 Para conectar con base de datos, tienes que confirar en windows el odbc(desgargar el driver primero)
 Una funcion si recibe un parametro y regresa un valor mientras que un metodo solo procesa
 Ejecutar un test desde la terminal de windows: (enviroment) PS C:\Users\lilia\Desktop\python-selenium\tests> python .\test_dummy.py
 
-
 Installar todas las librerias en Jenkins, desde la configuracion
+
+### Variables de entorno
+%ALLURE_HOME%
+C:\Users\lilia\Programs\Allure
+C:\Users\lilia\Programs\Allure\bin
+C:\Users\lilia\Programs\Allure\bin\allure.bat
+C:\Users\lilia\Programs\Allure\lib
+
+%PYTHON_HOME%
+C:\Users\lilia\AppData\Local\Programs\Python\Python313
+C:\Users\lilia\AppData\Local\Programs\Python\Python313\Scripts
 
 ### Configurar VS Code para BDD ###
 Agregar en visual studio code: Cucumber (Gherkin) Full Support

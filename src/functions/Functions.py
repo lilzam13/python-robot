@@ -10,6 +10,8 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select
 from selenium.webdriver.common.keys import Keys
 from selenium.common.exceptions import TimeoutException, NoSuchElementException, NoAlertPresentException, NoSuchWindowException, WebDriverException
+from webdriver_manager.chrome import ChromeDriverManager
+from webdriver_manager.firefox import GeckoDriverManager
 import os
 import json
 import pytest
@@ -37,7 +39,7 @@ class Functions(Inicializar):
             try:
                 options = OpcionsChrome()
                 options.add_argument("--start-maximized")
-                service = Service(executable_path=ruta_driver)
+                service = Service(executable_path=ChromeDriverManager().install())
                 self.driver = webdriver.Chrome(service=service, options=options)
                 self.driver.implicitly_wait(10)
                 self.driver.get(URL)
@@ -58,7 +60,7 @@ class Functions(Inicializar):
                 self.driver.implicitly_wait(10)
                 self.driver.maximize_window()
                 self.driver.get(URL)
-                service = Service(executable_path=ruta_driver)
+                service = Service(executable_path=ChromeDriverManager().install())
                 self.principal = self.driver.window_handles[0]
                 self.ventanas = {'Principal':self.driver.window_handles[0]}
                 print("Driver inicializado correctamente")
