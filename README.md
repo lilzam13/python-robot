@@ -27,6 +27,24 @@ Es un framework que da soporte para aplicar la metodologia Agil de desarrollo BD
 Class name: se usa la convencion PascalCase, y terminar con la palabra test, por ejemplo: LoginTest
 Method name: Debe iniciar con la palabra test_, y la convencion es snake_case, por ejemplo: test_login_exitoso
 File name: Debe usar la convencion snake_case; y comenzar o terminar con la palabra test, por ejemplo: test_login.py o login_test.py
+Para pruebas con behave:
+| Parte   | Forma verbal recomendada             |
+| ------- | ------------------------------------ |
+| `Given` | Presente → *"el usuario está en..."* |
+| `When`  | Presente → *"el usuario ingresa..."* |
+| `Then`  | Presente → *"el sistema muestra..."* |
+
+*** Jenkins ***
+Es una herramienta de automatizacion de Integracion continua/continua entrega(CI/CD). Se usa para contruir, probar y desplegar software automaticamente
+*** Gherkins ***
+Es un lenguaje de texto estructurado y legible por humanos que se utiliza para escribir casos de prueba en formato BDD
+*** Behave vs Cucumber ***
+Son similares pero diferente lenguaje, ambos se utilizan para las pruebas BDD
+Cucumber: Lenguaje Ruby, usa archivo .feature, usa el lenguje Gherkin
+Behave: Lenguaje Python, usa archivo .feature, usa el lenguje Gherkin
+*** Pytest  vs Behave ***
+Pytest: Es un framework de pruebas unitarias y funcionales en Python
+Behave: Es un framework de pruebas BDD diseñado para describir el comportamiento del sistema en un lenguaje natural.
 
 ### HERRAMIENTAS E IMPLEMENTACION ###
 *** Lenguaje de Programacion: *** Java, c#, Python etc.
@@ -57,11 +75,10 @@ pip list
 
 ### Virtual enviromennt ###
 pip install virtualenv
-python -m virtualenv enviroment
 Crear un entorno virtual: python -m venv venv
 Activa el entorno virtual: venv\Scripts\activate
-Instala Selenium dentro del entorno virtual: pip install selenium
 Comprobar que selenium esta bien instalado: python -c "import selenium; print(selenium.__version__)"
+
 *** Intalar librerias dentro del entorno virtual ***
 pip install -r requirement.txt
 pip freeze .\requirement.txt
@@ -75,7 +92,7 @@ Ejecutar caso de prueba y generar reporte: python -m pytest 01_test.py 00_hellow
 Nota: Si no funciona intentar con comas para separar lo tests cases, .\testcase or revisar que siempre lleve el .py
 
 ### TEMAS PENDIENTES ###
-Katalon reader, selenium ide y cucumber
+Katalon reader, selenium id
 
 ### Informacion general de los Tests Cases ###
 02_test.py: Diferentes tipos: select etc
@@ -253,4 +270,3 @@ behave -i file_name.feature
 Scenario: Abrir el navegador con una url previamente definida
         Given abrir el navegador 'FIREFOX' con la url 'https://chatgpt.com/'
         Then Cerrar la aplicacion
-
