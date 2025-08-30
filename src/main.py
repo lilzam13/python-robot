@@ -1,5 +1,26 @@
 import os
 import datetime
+from selenium import webdriver
+
+from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
+from webdriver_manager.chrome import ChromeDriverManager
+from webdriver_manager.firefox import GeckoDriverManager
+from webdriver_manager.microsoft import EdgeChromiumDriverManager
+
+# Configura las opciones para ejecutar Chrome en modo headless
+options = Options()
+options.add_argument('--headless')
+options.add_argument('--no-sandbox')
+options.add_argument('--disable-dev-shm-usage')
+
+# Inicializa el driver. Selenium Manager se encargará de encontrar el driver compatible.
+# Ya no es necesario el objeto Service ni la ruta del driver.
+driver = webdriver.Chrome(options=options)
+# ... tu código de automatización ...
+
+driver.quit()
+
 class Inicializar():
 
     # Ruta absoluta al directorio base del proyecto
@@ -7,15 +28,6 @@ class Inicializar():
 
     # Ruta a la carpeta de drivers
     DRIVERS_DIR = os.path.join(BASEDIR, "src", "drivers")
-
-    # Ruta al chromedriver.exe
-    CHROMEDRIVER_PATH = os.path.join(DRIVERS_DIR, "chromedriver.exe")
-
-    # Ruta al chromedriver.exe
-    FIREDRIVER_PATH = os.path.join(DRIVERS_DIR, "geckodriver.exe")
-
-    # Ruta al chromedriver.exe
-    EDGEDRIVER_PATH = os.path.join(DRIVERS_DIR, "msedgedriver.exe")
 
     # Ruta a la carpeta de pages
     PAGES_DIR = os.path.join(BASEDIR, "src", "pages")
@@ -36,13 +48,39 @@ class Inicializar():
 
     if Enviroment == "Dev":
         URL = 'https://www.google.com/'
-
-    if Enviroment == "Test":
-        URL = 'https://www.facebook.com/r.php?entry_point=login'
-        User = "root"
-        Pass = "stx123"
+        User = "lilian"
+        Pass = "Stx12345$"
+        Scenario = {
+            "ENV_ID": "74",
+            "TBASE": "BASE DEV Liliana",
+            "Proceso": "Review170",
+            "email":"lilianazam13@gmail.com"
+        }
         DB_HOST = "127.0.0.1"
         DB_PORT = "3306"
         DB_DATABASE = "world"
         DB_USER = "root"
         DB_PASS = "stx123"
+
+
+    if Enviroment == "Test":
+        URL = 'https://www.facebook.com/r.php?entry_point=login'
+        User = "lilzam"
+        Pass = "Stx54321$"
+
+        Scenario = {
+            "ENV_ID": "74",
+            "TBASE": "BASE TEST Liliana",
+            "Proceso": "Review170",
+            "email":"lilianaqa@gmail.com"
+        }
+        DB_HOST = "127.0.0.1"
+        DB_PORT = "3306"
+        DB_DATABASE = "world"
+        DB_USER = "root"
+        DB_PASS = "stx123"
+
+if __name__ == "__main__":
+    print("Inicializando configuración...")
+    config = Inicializar()
+    print("URL de pruebas:", config.URL)

@@ -12,6 +12,7 @@ from selenium.webdriver.common.keys import Keys
 from selenium.common.exceptions import TimeoutException, NoSuchElementException, NoAlertPresentException, NoSuchWindowException, WebDriverException
 from webdriver_manager.chrome import ChromeDriverManager
 from webdriver_manager.firefox import GeckoDriverManager
+from webdriver_manager.microsoft import EdgeChromiumDriverManager
 import os
 import json
 import pytest
@@ -33,9 +34,6 @@ class Functions(Inicializar):
         print("---------------")
     
         if navegador.upper() == ("CHROME"):
-            ruta_driver = Inicializar.CHROMEDRIVER_PATH
-            if not os.path.exists(ruta_driver):
-                raise FileNotFoundError(F"No se encontro el driver en: {ruta_driver}")
             try:
                 options = OpcionsChrome()
                 options.add_argument("--start-maximized")
@@ -52,15 +50,12 @@ class Functions(Inicializar):
                 raise RuntimeError(f"No se puede inciar el driver de Chrome {e}")
         
         if navegador.upper() == ("FIREFOX"):
-            ruta_driver = Inicializar.FIREDRIVER_PATH
-            if not os.path.exists(ruta_driver):
-                raise FileNotFoundError(F"No se encontro el driver en: {ruta_driver}")
             try:
                 self.driver = webdriver.Firefox()
                 self.driver.implicitly_wait(10)
                 self.driver.maximize_window()
                 self.driver.get(URL)
-                service = Service(executable_path=ChromeDriverManager().install())
+                service = Service(executable_path=GeckoDriverManager().install())
                 self.principal = self.driver.window_handles[0]
                 self.ventanas = {'Principal':self.driver.window_handles[0]}
                 print("Driver inicializado correctamente")
@@ -69,13 +64,10 @@ class Functions(Inicializar):
                 raise RuntimeError(f"No se puede inciar el driver de Firefox {e}")
         
         if navegador.upper() == ("EDGE"):
-             if not os.path.exists(ruta_driver):
-                raise FileNotFoundError(F"No se encontro el driver en: {ruta_driver}")
              try:
-                ruta_driver = Inicializar.EDGEDRIVER_PATH
                 options = EdgeOptions()
                 options.add_argument("--start-maximized")
-                service = EdgeService(executable_path=ruta_driver)
+                service = EdgeService(executable_path=EdgeChromiumDriverManager().install())
                 self.driver = webdriver.Edge(service=service, options=options)
                 self.driver.implicitly_wait(10)
                 self.driver.get(URL)
@@ -417,39 +409,6 @@ class Functions(Inicializar):
         if key.capitalize() == "Space":
             Functions.get_elements(self, element).send_keys(Keys.SPACE)
 
-
-    def assert_text(self, locator, TEXTO):
-        Get_Entity = Functions.get_entity(self, locator)
-        if Get_Entity is None:
-            print("No se encontró el valor en el JSON definido")
-            return
-
-        locator_type = self.json_GetFieldBy.lower()
-        locator_value = self.json_ValueToFind
-        ObjText = None
-
-        wait = WebDriverWait(self.driver, 20)
-
-        if locator_type == "id":
-            wait.until(EC.presence_of_element_located((By.ID, locator_value)))
-            ObjText = self.driver.find_element(By.ID, locator_value).text
-
-        elif locator_type == "xpath":
-            wait.until(EC.visibility_of_element_located((By.XPATH, locator_value)))
-            element = self.driver.find_element(By.XPATH, locator_value)
-            ObjText = element.text
-            print("[DEBUG] HTML:", element.get_attribute("outerHTML"))
-
-        elif locator_type == "name":
-            wait.until(EC.visibility_of_element_located((By.NAME, locator_value)))
-            ObjText = self.driver.find_element(By.NAME, locator_value).text
-
-        else:
-            print(f"Tipo de localizador '{locator_type}' no soportado.")
-            return
-        
-        assert TEXTO.strip() == ObjText.strip(), f"Texto no coincide:\nEsperado: {TEXTO}\nObtenido: {ObjText}"
-
     def assert_text(self, locator, TEXTO):
         Get_Entity = Functions.get_entity(self, locator)
         if Get_Entity is None:
@@ -739,6 +698,21 @@ class Functions(Inicializar):
             except TimeoutException:
                 print("Assert path: Elemento no presente " + locator)
                 return False
+    
+    def replace_with_context_values(self, text):
+        pattern = r"Scenario:(\w+)"
+        matches = re.findall(pattern, text, re.IGNORECASE)
+
+        for variable in matches:
+            if variable.lower() == "today":
+                replacement = datetime.datetime.now().strftime("%Y-%m-%dT%H:%M:%S")
+            else:
+                replacement = Inicializar.Scenario.get(variable)
+                if replacement is None:
+                    continue  # o puedes lanzar un error si es crítico
+            text = re.sub(f"Scenario:{variable}", replacement, text, flags=re.IGNORECASE)
+        print(text)
+        return text
 
 
     
