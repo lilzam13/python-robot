@@ -63,11 +63,11 @@ pabot --processes 2 --outputdir Resultados prueba*.robot
 ### Allure con Robot
 pip install allure-robotframework
 pip install robotframework-requests
-
-
 robot --listener allure_robotframework:../reports/allure-results ./practica_test2.robot
 allure serve ../reports/allure-results
 
+
+#### Git liliana zamora####
 ### GIT AND GIT HUB ###
 
 *** Git *** es un software de control de versiones distribuido. Se instala y se usa localmente en tu computadora. No necesita internet para funcionar (aunque puede conectarse a servicios remotos).
@@ -77,7 +77,6 @@ allure serve ../reports/allure-results
 *** Git Ignore: *** Sirve para indicarle a Git que archivos o carpetas No deben rastrear o incluir en los commits
 
 *** git init: *** Sirve para inciarlizar un repositorio
-
 ### Estapas para enviar el codigo a GitHub: ###
 *** Working Directory: *** Local Folder Where your are editing your files
 *** Staging Area:***  it is like a Pre-commit area  where you prepare your files that you want to include in your next commit. You add those files using the commando: git add.
