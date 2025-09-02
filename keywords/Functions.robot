@@ -1,8 +1,10 @@
 *** Settings ***
 Library    SeleniumLibrary
 Library    Dialogs
+Library     AllureLibrary
+Library     RequestsLibrary
 *** Variables ***
-${screen_path} =    C:/Users/lilia/Desktop/python-robot/reports/img_robot/
+${screen_path} =    C:/Users/lilia/Desktop/python-robot/src/data/capturas/allure/
 
 *** Keywords ***
 F_texto
@@ -25,7 +27,13 @@ F_enter
 
 F_screenshot
     [Arguments]    ${name_img}
-    Capture Page Screenshot    ${screen_path}${name_img}
+    ${capture_path}=    Set Variable    ${OUTPUT DIR}/${name_img}
+    Capture Page Screenshot    ${capture_path}
+
+F_screenshot_allure
+    [Arguments]    ${name_img}   
+    ${screenshot_path}=    Capture Page Screenshot    ${OUTPUT DIR}/${name_img}
+    Attach File    ${screenshot_path}
 
 F_screen_element
     [Arguments]    ${sel}    ${name_img}
