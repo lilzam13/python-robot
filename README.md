@@ -68,6 +68,7 @@ allure serve ../reports/allure-results
 
 
 #### Git liliana zamora####
+### git stash testing ####
 ### GIT AND GIT HUB ###
 
 *** Git *** es un software de control de versiones distribuido. Se instala y se usa localmente en tu computadora. No necesita internet para funcionar (aunque puede conectarse a servicios remotos).
