@@ -63,15 +63,32 @@ pabot --processes 2 --outputdir Resultados prueba*.robot
 ### Allure con Robot
 pip install allure-robotframework
 pip install robotframework-requests
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
+
+
 robot --listener allure_robotframework:../reports/allure-results ./practica_test2.robot
 allure serve ../reports/allure-results
 
-#### Working in progress ###
+### GIT AND GIT HUB ###
 
-=======
-=======
+*** Git *** es un software de control de versiones distribuido. Se instala y se usa localmente en tu computadora. No necesita internet para funcionar (aunque puede conectarse a servicios remotos).
+
+*** GitHub *** es una plataforma web basada en Git. Permite almacenar repositorios Git en la nube y colaborar con otras personas.
+
+*** Git Ignore: *** Sirve para indicarle a Git que archivos o carpetas No deben rastrear o incluir en los commits
+
+*** git init: *** Sirve para inciarlizar un repositorio
+
+### Estapas para enviar el codigo a GitHub: ###
+*** Working Directory: *** Local Folder Where your are editing your files
+*** Staging Area:***  it is like a Pre-commit area  where you prepare your files that you want to include in your next commit. You add those files using the commando: git add.
+*** Commit: ***  it is a snapshot of your project. Git creates a new commit with a unique ID. The command is:  git commit -m "Add a message"
+*** Local Repository: ***  After you commit the change are stored in your local git repository. Here you dont afect remote GitHub repository, you can use Git log to view the history
+*** Push to remote repository: ***   it is sending  your local commits to a remote repository like Github. Puches your local chanches to a branch using Git push origin main.
+*** Remote repository: ***  Your code is hosted in the cloud
+
+*** Pull: *** If you are collaborating with others, you might fetch and merge changes made by others. Using git pull
+*** Branching: *** You might work in a branch to isolate you work, create a branch using: git checkout -b <branch-name>
+
 *** Stashed: *** saves changes that you dont wanto to commit yet
 
 ### How to merge stashed changes in your local env. ###
@@ -100,8 +117,3 @@ Confirmar y vericar las acciones
 Hacer una pausa
 Retomar el camino
 ##########
-<<<<<<< Updated upstream
-Token: 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
-=======
->>>>>>> Stashed changes
-Token: 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
