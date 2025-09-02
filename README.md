@@ -67,10 +67,13 @@ robot --listener allure_robotframework:../reports/allure-results ./practica_test
 allure serve ../reports/allure-results
 
 
+<<<<<<< Updated upstream
 #### Git liliana zamora####
 ### git stash testing ####
 ### GIT AND GIT HUB ###
 +++pruebas
+=======
+>>>>>>> Stashed changes
 *** Git *** es un software de control de versiones distribuido. Se instala y se usa localmente en tu computadora. No necesita internet para funcionar (aunque puede conectarse a servicios remotos).
 
 *** GitHub *** es una plataforma web basada en Git. Permite almacenar repositorios Git en la nube y colaborar con otras personas.
@@ -94,6 +97,7 @@ allure serve ../reports/allure-results
 ### How to merge stashed changes in your local env. ###
 *** Stashed your changes: ***stashed changes with git stash. this will save your uncommitted changes and revert the working directoy
 *** List you stashed: *** Each stash is assigned an identifier like stash@{0}, stash@{1}, etc. git stash list
+liliana zamora
 *** Apply to stashed:  ***To merge the stashed changes back into your working directory. Use the git stash apply command or to apply a specific stash git stash apply stash@{0}
 *** Resolve Conflicts: ***Use git status to see which files have confliscts. after resolving stage the changes using git add
 *** Drop the stash: ***  you can remove it from the stash list:  git stash drop or git stash drop stash@{0}
