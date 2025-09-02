@@ -97,7 +97,7 @@ allure serve ../reports/allure-results
 ### How to merge stashed changes in your local env. ###
 *** Stashed your changes: ***stashed changes with git stash. this will save your uncommitted changes and revert the working directoy
 *** List you stashed: *** Each stash is assigned an identifier like stash@{0}, stash@{1}, etc. git stash list
-liliana zamora
+liliana zamora cardenas testing
 *** Apply to stashed:  ***To merge the stashed changes back into your working directory. Use the git stash apply command or to apply a specific stash git stash apply stash@{0}
 *** Resolve Conflicts: ***Use git status to see which files have confliscts. after resolving stage the changes using git add
 *** Drop the stash: ***  you can remove it from the stash list:  git stash drop or git stash drop stash@{0}
