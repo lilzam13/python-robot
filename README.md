@@ -64,18 +64,14 @@ pabot --processes 2 --outputdir Resultados prueba*.robot
 pip install allure-robotframework
 pip install robotframework-requests
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 robot --listener allure_robotframework:../reports/allure-results ./practica_test2.robot
 allure serve ../reports/allure-results
 
 #### Working in progress ###
 
 =======
- ###LILIANA ZAMORA###LILIANA ZAMORA###LILIANA ZAMORA###LILIANA ZAMORA###LILIANA ZAMORA###LILIANA ZAMORA###LILIANA ZAMORA###LILIANA ZAMORA###LILIANA ZAMORA####LILIANA 
-
-robot --listener allure_robotframework:../reports/allure-results ./practica_test2.robot
-allure serve ../reports/allure-results
-
->>>>>>> Stashed changes
+=======
 *** Stashed: *** saves changes that you dont wanto to commit yet
 
 ### How to merge stashed changes in your local env. ###
@@ -104,5 +100,8 @@ Confirmar y vericar las acciones
 Hacer una pausa
 Retomar el camino
 ##########
+<<<<<<< Updated upstream
 Token: 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
+=======
+>>>>>>> Stashed changes
 Token: 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
