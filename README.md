@@ -66,14 +66,6 @@ pip install robotframework-requests
 robot --listener allure_robotframework:../reports/allure-results ./practica_test2.robot
 allure serve ../reports/allure-results
 
-
-<<<<<<< Updated upstream
-#### Git liliana zamora####
-### git stash testing ####
-### GIT AND GIT HUB ###
-+++pruebas
-=======
->>>>>>> Stashed changes
 *** Git *** es un software de control de versiones distribuido. Se instala y se usa localmente en tu computadora. No necesita internet para funcionar (aunque puede conectarse a servicios remotos).
 
 *** GitHub *** es una plataforma web basada en Git. Permite almacenar repositorios Git en la nube y colaborar con otras personas.
