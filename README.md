@@ -70,7 +70,7 @@ allure serve ../reports/allure-results
 #### Git liliana zamora####
 ### git stash testing ####
 ### GIT AND GIT HUB ###
-
++++pruebas
 *** Git *** es un software de control de versiones distribuido. Se instala y se usa localmente en tu computadora. No necesita internet para funcionar (aunque puede conectarse a servicios remotos).
 
 *** GitHub *** es una plataforma web basada en Git. Permite almacenar repositorios Git en la nube y colaborar con otras personas.
@@ -97,18 +97,7 @@ allure serve ../reports/allure-results
 *** Apply to stashed:  ***To merge the stashed changes back into your working directory. Use the git stash apply command or to apply a specific stash git stash apply stash@{0}
 *** Resolve Conflicts: ***Use git status to see which files have confliscts. after resolving stage the changes using git add
 *** Drop the stash: ***  you can remove it from the stash list:  git stash drop or git stash drop stash@{0}
-*** Pop the Stash: *** if you want to apply the stashed changes and remove it from the stash list in one step, you can use: git stash pop
-
-### Aplicar un revert a un repositorio remoto: ###
-Revertir un commit con Revert: No altera el historial y es seguro
-Encontrar commit a revertir con git log
-Revertir commit: git revert <hash obtenido del git log>
-Realizar el push: Despues de hacer el commit del revert, empujar los cambios: git push origin <nombre-de-tu-rama>
-
-### Revertir el ultimo commit, se puede usar Git reset, esta accion reescribe el historial. ###
-Restablecer tu repositorio local: git reset --soft HEAD~1 o git reset --hard HEAD~1
-Forzar el push al repositorio remoto: git push origin <nombre-de-tu-rama> --force
-
+*** Pop the Stash: *** if you want to apply the stashed changes and remove it from the stash list in one step, you can 
 ########## 
 Tomar desiciones
 Creer en ti y creer que si puedes y creertela
