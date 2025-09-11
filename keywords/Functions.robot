@@ -5,8 +5,15 @@ Library     AllureLibrary
 Library     RequestsLibrary
 *** Variables ***
 ${screen_path} =    C:/Users/lilia/Desktop/python-robot/src/data/capturas/allure/
-
+${url1} =    https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
 *** Keywords ***
+Abrir Navegador Seguro
+    [Arguments]    ${url1}
+    Open Browser    ${url1}    chrome    options=add_argument(--no-sandbox);add_argument(--disable-dev-shm-usage);add_argument(--disable-gpu);add_argument(--headless=new);add_argument(--disable-extensions);add_argument(--user-data-dir=/tmp/robot-profile-${TEST NAME})
+    Maximize Browser Window
+    Set Selenium Speed    .1s
+    Set Selenium Implicit Wait    50
+
 F_texto
     [Arguments]    ${sel}    ${dato}
     Wait Until Element Is Visible    ${sel}    

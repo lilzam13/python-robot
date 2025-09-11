@@ -14,7 +14,7 @@ Test Case 1: Login Incorrecto
     [Documentation]    Validando user and password incorrecto
     [Tags]     wrong_credentials
     Log    QA: ${name} ${last_name}
-    Open Browser    ${url}    ${browser}   
+    Abrir Navegador Seguro    ${url1}   
     Maximize Browser Window
     Set Selenium Speed    .1s
     Set Selenium Implicit Wait    50
@@ -38,7 +38,7 @@ Test Case 2: Login Validando user OK and password incorrect
     [Documentation]    Validando user OK and password incorrect
     [Tags]     wrong_credentials
     Log    QA: ${name} ${last_name}
-    Open Browser    ${url}    ${browser}   
+    Abrir Navegador Seguro    ${url1}   
     Maximize Browser Window
     Set Selenium Speed    .1s
     Set Selenium Implicit Wait    50
@@ -62,7 +62,7 @@ Test Case 3: Login Validando user wrong and password correct
     [Documentation]    Validando user wrong and password correct
     [Tags]     wrong_credentials
     Log    QA: ${name} ${last_name}
-    Open Browser    ${url}    ${browser}   
+    Abrir Navegador Seguro    ${url1}   
     Maximize Browser Window
     Set Selenium Speed    .1s
     Set Selenium Implicit Wait    50
@@ -85,7 +85,7 @@ Test Case 4: Login Validando user can no be empty
     [Documentation]    Validando user can no be empty
     [Tags]     field_empty
     Log    QA: ${name} ${last_name}
-    Open Browser    ${url}    ${browser}   
+    Abrir Navegador Seguro    ${url1}   
     Maximize Browser Window
     Set Selenium Speed    .1s
     Set Selenium Implicit Wait    50
@@ -108,7 +108,7 @@ Test Case 5: Login Validando password can no be empty
     [Documentation]    Validando password can no be empty
     [Tags]     field_empty
     Log    QA: ${name} ${last_name}
-    Open Browser    ${url}    ${browser}   
+    Abrir Navegador Seguro    ${url1}   
     Maximize Browser Window
     Set Selenium Speed    .1s
     Set Selenium Implicit Wait    50
@@ -133,7 +133,7 @@ Test Case 6: Login Validando password and user can no be empty
     [Documentation]    Validando password and user can no be empty
     [Tags]     field_empty
     Log    QA: ${name} ${last_name}
-    Open Browser    ${url}    ${browser}   
+    Abrir Navegador Seguro    ${url1}   
     Maximize Browser Window
     Set Selenium Speed    .1s
     Set Selenium Implicit Wait    50
@@ -158,7 +158,7 @@ Test Case 7: Login Validando special characters in user
     [Documentation]    Validando special characters in user
     [Tags]     special_characters
     Log    QA: ${name} ${last_name}
-    Open Browser    ${url}    ${browser}   
+    Abrir Navegador Seguro    ${url1}   
     Maximize Browser Window
     Set Selenium Speed    .1s
     Set Selenium Implicit Wait    50
@@ -182,7 +182,7 @@ Test Case 8: Login Validando special characters in password
     [Documentation]    Validando special characters in password
     [Tags]     special_characters
     Log    QA: ${name} ${last_name}
-    Open Browser    ${url}    ${browser}   
+    Abrir Navegador Seguro    ${url1}   
     Maximize Browser Window
     Set Selenium Speed    .1s
     Set Selenium Implicit Wait    50
@@ -206,7 +206,7 @@ Test Case 9: Login Right credentials
     [Documentation]    Right credentials
     [Tags]     log_happy
     Log    QA: ${name} ${last_name}
-    Open Browser    ${url}    ${browser}   
+    Abrir Navegador Seguro    ${url1}   
     Maximize Browser Window
     Set Selenium Speed    .1s
     Set Selenium Implicit Wait    50
