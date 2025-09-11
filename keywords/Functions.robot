@@ -1,6 +1,6 @@
 *** Settings ***
 Library    SeleniumLibrary
-Library    Dialogs
+##Library    Dialogs
 Library     AllureLibrary
 Library     RequestsLibrary
 *** Variables ***
@@ -9,7 +9,8 @@ ${url1} =    https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
 *** Keywords ***
 Abrir Navegador Seguro
     [Arguments]    ${url1}
-    Open Browser    ${url1}    chrome    options=add_argument(--no-sandbox);add_argument(--disable-dev-shm-usage);add_argument(--disable-gpu);add_argument(--headless=new);add_argument(--disable-extensions);add_argument(--user-data-dir=/tmp/robot-profile-${TEST NAME})
+    ${chrome_options}=    Set Variable    --no-sandbox,--disable-dev-shm-usage,--disable-gpu,--headless=new,--user-data-dir=/tmp/robot-profile-${TEST NAME}
+    Open Browser    ${url1}    chrome    options=${chrome_options}
     Maximize Browser Window
     Set Selenium Speed    .1s
     Set Selenium Implicit Wait    50
